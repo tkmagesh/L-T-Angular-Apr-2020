@@ -120,6 +120,7 @@
                 $root.html(_template);
             };
 
+            //Reacting to user actions
             $root.on('change', '#txtBasic', function () {
                 model.set('basic', $(this).val().toInt());
             });

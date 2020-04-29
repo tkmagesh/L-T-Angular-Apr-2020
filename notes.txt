@@ -1,0 +1,180 @@
+1. What is the problem angular solves?
+    Rich Internet Applications
+
+2. What are the challenges in solving the problem ourselves?
+    Using the salary calculator
+
+3. Typescript Vs JavaScript
+        typescript =  javascript + typesafety
+
+4. ES6
+
+5. Angular Building Blocks
+    
+6. Angular CLI
+
+7. Solving problems using Angular
+8. Observables
+9. Routing
+10. Testing
+11. Packaging and Deployment
+
+
+
+
+
+1. Data validation
+2. Display error messages
+3. Highlight textboxes if the data is invalid
+4. Disable the 'calculate' button if the data is invalid
+
+THE USER DOESNOT WANT ANY OF THE ABOVE
+THERE IS A SEPARATE BUILD TEAM THAT WILL PREPARE THE APP FOR DEPLOYMENT
+
+
+JavaScript = loosely typed
+
+int x;
+
+x = "abc"
+
+var x;
+
+x = 100;
+
+x = "abc";
+
+class Calculator{
+    public static int add(int x, int y){
+        return x + y;
+    }
+}
+
+function add(x,y){
+    return x + y;
+}
+
+add(10,20)
+add(10,"20")
+add(10,"abc")
+add([10,20], [30,40])
+add([10,20], [30,"40"])
+add([10,20], [30,"abc"])
+add([10,20], [30,[40,50]])
+add(function(){ return 10;} ,function(){ return 20; })
+add(function(){ return 10;} ,function(){ return "20"; })
+add(function(){ return [10,20];} ,function(){ return [30,[40,"50", "abc"]]; })
+add([function(){ return [10,20];} ,function(){ return [30,[40,"50", "abc"]]; }])
+add(10);
+add();
+add(10,20,30,40,50)
+add(function (){ return [function(){ return [10,20];} ,function(){ return [30,[40,"50", "abc"]]; }]; })
+
+
+function add(x,y){
+    if (typeof x !== 'number' || typeof y !== 'number')
+        throw new Error('invalid argument type');
+    return x + y;
+}
+
+function add(){
+    function parseArg(n){
+        if (Array.isArray(n)) return add.apply(this, n);
+        if (typeof n === 'function') return parseArg(n());
+        return isNaN(n) ? 0 : parseInt(n, 10);
+    }
+    return arguments.length <= 1 ? parseArg(arguments[0]) : parseArg(arguments[0]) + add(Array.prototype.slice.call(arguments, 1));
+}
+
+var x :number = 10;
+
+function add (x : number, y : number) : number {
+    return x + y;
+}
+
+CoffeeScript, TypeScript, Script#
+
+add(10,"abc")
+
+class MyClass{
+
+}
+        |
+        |
+        V
+    typescript compiler
+        |
+        |
+        V
+function MyClass(){ 
+
+
+}
+function add (x , y )  {
+    return x + y;
+}
+
+ES6 = EcmaScript 6
+
+var = IS NOT block scoped
+
+1. let
+2. const
+3. array destructuring
+4. rest operator (array)
+5. spread operator (array)
+6. object destructuring
+7. rest operator (object)
+8. spread operator (object)
+9. object contructors
+10. default arguments
+11. arrow functions
+12. template strings
+13. classes
+
+
+Angular Building Blocks
+
+1. Module
+        Registry of other application entities (components, directives, pipes, services)
+        Instance creation of all the application entities are taken care
+        Dependency Injection is also taken care of.
+
+        the starting point of your application
+            therefore, there has to be a minimum of 1 module 
+
+2. Component (== view) (UI)
+        Presentation + UI Behavior (Reacting to user actions) + UI State (data)
+        Presentation = HTML templates + CSS
+        
+3. Directive (UI)
+        Low level DOM manipulation logic
+        (apply css to dom nodes, show/hide dom nodes, create new dom nodes etc)
+
+4. Pipe (UI)
+        Data transformation logic for presentation
+
+5. Service
+        NON UI responsibilities
+
+Angular CLI 
+    node module @angular/cli
+    npm install @angular/cli -g
+
+    npm config delete http-proxy
+    npm config delete https-proxy
+    npm config delete proxy
+
+    npm config set proxy http://
+
+    skaffold
+
+ts -> js
+js files are bundled (main.js, runtime. js, vendor.js etc)
+index.html is modified to include the js files
+index.html is served to the browser
+
+In the browser
+index.html is loaded
+all the js files referred in the index.html are loaded and executed
+html is generated and shown to the user
