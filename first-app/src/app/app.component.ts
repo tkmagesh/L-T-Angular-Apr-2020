@@ -14,8 +14,8 @@ export class AppComponent {
     }, 10000); */
   }
 
-  changeTitle(){
+  changeTitle(newTitle : string){
     //console.log('The title is about to be changed');
-    this.title = 'My New App'
+    this.title = newTitle;
   }
 }
