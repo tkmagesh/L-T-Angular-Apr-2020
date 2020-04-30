@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
+import { SalaryCalculatorComponent } from './salary-calculator/salary-calculator.component';
 /* 
   declarations -> UI entities are registered (component, directive, pipe) 
   providers -> NON UI entities are registered (services)
@@ -13,11 +14,12 @@ import { GreeterComponent } from './greeter/greeter.component';
   declarations: [
     AppComponent
     , GreeterComponent
+    , SalaryCalculatorComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent, GreeterComponent]
+  bootstrap: [AppComponent, GreeterComponent, SalaryCalculatorComponent]
 })
 export class AppModule { }
