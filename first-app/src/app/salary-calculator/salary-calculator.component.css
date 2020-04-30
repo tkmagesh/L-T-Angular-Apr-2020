@@ -15,3 +15,7 @@ td{
 .goodSalary{
     color : green;
 }
+
+.hide{
+    display : none;
+}

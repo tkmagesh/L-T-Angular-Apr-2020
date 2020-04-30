@@ -178,3 +178,19 @@ In the browser
 index.html is loaded
 all the js files referred in the index.html are loaded and executed
 html is generated and shown to the user
+
+directives
+    - Attribute directives
+        changes the attributes of existing dom nodes
+        do not make changes to the structure of the dom tree
+            (do not result in adding new dom nodes or remove existing dom nodes)
+        used by enclosing within []
+
+    - Structural directives
+        changes the dom tree by adding new dom nodes and/or removing existing dom nodes
+        used by prefixing with a *
+        
+Homework
+    Scan through the documentation for directives, and pipes
+    Array methods - forEach, map, reduce, filter
+

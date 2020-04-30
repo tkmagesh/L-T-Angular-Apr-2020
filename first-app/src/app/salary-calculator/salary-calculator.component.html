@@ -20,7 +20,8 @@
     <div class="field">
         <input type="button" value="Calculate" (click)="model.calculate()">
     </div>
-    <div class="field">
+    <!-- <div class="field" [ngClass]="{hide : model.salary === 0}"> -->
+    <!-- <div class="field" *ngIf="model.salary !== 0">
         <table>
             <tbody>
                 <tr>
@@ -34,5 +35,22 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div> -->
+    <!-- <ng-template [ngIf]="model.salary !== 0"> -->
+        <div class="field">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>{{model.basic}}</td>
+                        <td>{{model.hra}}</td>
+                        <td>{{model.da}}</td>
+                        <td>{{model.tax}}</td>
+                        <td [ngClass]="{goodSalary : model.salary >= 12000, poorSalary : model.salary < 12000}">
+                            {{model.salary | currency:'INR'}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    <!-- </ng-template> -->
 </section>
