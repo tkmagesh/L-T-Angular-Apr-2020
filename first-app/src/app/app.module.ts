@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { GreeterComponent } from './greeter/greeter.component';
 /* 
   declarations -> UI entities are registered (component, directive, pipe) 
   providers -> NON UI entities are registered (services)
@@ -11,11 +12,12 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent
+    , GreeterComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, GreeterComponent]
 })
 export class AppModule { }
