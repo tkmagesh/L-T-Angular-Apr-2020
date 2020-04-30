@@ -1,8 +1,8 @@
-<div class="highlight">Greeter Will be Displayed here!!</div>
 
-<!-- 
-    <label for="">User Name :</label>
-    <input type="text" name="" id="">
-    <input type="button" value="Greet">
-    <div class="highlight">[Greet Message will be displayed here]</div> 
--->
+<h1>Greeter</h1>
+<hr>
+<label for="">User Name :</label>
+<!-- <input type="text" #txtUserName (input)="userName=txtUserName.value"> -->
+<input type="text" (input)="userName=$event.target.value">
+<input type="button" value="Greet" (click)="onGreetClick()">
+<div class="highlight">{{message}}</div> 
