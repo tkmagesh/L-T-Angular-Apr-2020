@@ -7,6 +7,7 @@ import { Bug } from './models/Bug';
 })
 export class BugTrackerComponent{
     bugs : Bug[] = [];
+    //closedCount : number = 0;
 
     onAddNewClick(bugName : string){
         const newBug: Bug = { name : bugName , isClosed :false};
@@ -14,6 +15,19 @@ export class BugTrackerComponent{
     }
 
     onBugNameClick(bugToToggle : Bug){
-        console.log(bugToToggle);
+        bugToToggle.isClosed = !bugToToggle.isClosed;
+        //this.closedCount = this.bugs.reduce((result, bug) => bug.isClosed ? ++ result : result, 0);
+    }
+
+    onRemoveClick(bugToRemove : Bug){
+        this.bugs = this.bugs.filter(bug => bug !== bugToRemove);
+    }
+
+    onRemoveClosedClick() : void {
+        this.bugs = this.bugs.filter(bug => !bug.isClosed);
+    }
+
+    getClosedCount() : number {
+        return this.bugs.reduce((result, bug) => bug.isClosed ? ++result : result, 0);
     }
 }
