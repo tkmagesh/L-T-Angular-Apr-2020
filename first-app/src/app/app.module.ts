@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
 import { SalaryCalculatorComponent } from './salary-calculator/salary-calculator.component';
 import { ProductsComponent } from './products/products.component'
+
+import { SalaryCalculatorModel } from './salary-calculator/SalaryCalculatorModel';
 /* 
   declarations -> UI entities are registered (component, directive, pipe) 
   providers -> NON UI entities are registered (services)
@@ -21,11 +23,12 @@ import { ProductsComponent } from './products/products.component'
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    SalaryCalculatorModel
+  ],
   bootstrap: [
     AppComponent
     , GreeterComponent
-    , SalaryCalculatorComponent
     , ProductsComponent
   ]
 })
