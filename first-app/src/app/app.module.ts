@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
 import { SalaryCalculatorComponent } from './salary-calculator/salary-calculator.component';
+import { ProductsComponent } from './products/products.component'
 /* 
   declarations -> UI entities are registered (component, directive, pipe) 
   providers -> NON UI entities are registered (services)
@@ -15,11 +16,17 @@ import { SalaryCalculatorComponent } from './salary-calculator/salary-calculator
     AppComponent
     , GreeterComponent
     , SalaryCalculatorComponent
+    , ProductsComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent, GreeterComponent, SalaryCalculatorComponent]
+  bootstrap: [
+    AppComponent
+    , GreeterComponent
+    , SalaryCalculatorComponent
+    , ProductsComponent
+  ]
 })
 export class AppModule { }
