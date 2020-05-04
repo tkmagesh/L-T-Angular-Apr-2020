@@ -194,3 +194,4 @@ Homework
     Scan through the documentation for directives, and pipes
     Array methods - forEach, map, reduce, filter
 
+

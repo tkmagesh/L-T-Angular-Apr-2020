@@ -19,7 +19,7 @@ export class SalaryCalculatorComponent implements OnInit {
   } 
   */
 
-  constructor (private model : SalaryCalculatorModel){
+  constructor (public model : SalaryCalculatorModel){
 
   }
 
