@@ -12,4 +12,8 @@ export class BugTrackerComponent{
         const newBug: Bug = { name : bugName , isClosed :false};
         this.bugs.push(newBug);
     }
+
+    onBugNameClick(bugToToggle : Bug){
+        console.log(bugToToggle);
+    }
 }
