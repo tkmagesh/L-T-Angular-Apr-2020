@@ -10,8 +10,14 @@ export class BugTrackerComponent{
     bugs : Bug[] = [];
     //closedCount : number = 0;
 
+    bugSortAttr : string = '';
+    bugSortDesc : boolean = false;
+    
     constructor(private bugOperations : BugOperationsService){
-
+        this.bugs.push(this.bugOperations.createNew('Server communication failure'));
+        this.bugs.push(this.bugOperations.createNew('Data integrity checks failed'));
+        this.bugs.push(this.bugOperations.createNew('User actions not recognized'));
+        this.bugs.push(this.bugOperations.createNew('Application not responding'));
     }
 
     onAddNewClick(bugName : string){
