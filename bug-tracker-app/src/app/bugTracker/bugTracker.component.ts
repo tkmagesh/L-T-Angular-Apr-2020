@@ -29,9 +29,9 @@ export class BugTrackerComponent{
     }
 
     onBugNameClick(bugToToggle : Bug){
-        //bugToToggle.isClosed = !bugToToggle.isClosed;
-        this.bugOperations.toggle(bugToToggle);
-        //this.closedCount = this.bugs.reduce((result, bug) => bug.isClosed ? ++ result : result, 0);
+        const toggledBug = this.bugOperations.toggle(bugToToggle);
+        this.bugs = this.bugs.map(bug => bug === bugToToggle ? toggledBug : bug);
+        
     }
 
     onRemoveClick(bugToRemove : Bug){
@@ -42,7 +42,9 @@ export class BugTrackerComponent{
         this.bugs = this.bugs.filter(bug => !bug.isClosed);
     }
 
+    //convert the following into a pipe 'closedCountPipe'
     getClosedCount() : number {
+        console.log('getClosedCount triggered');
         return this.bugs.reduce((result, bug) => bug.isClosed ? ++result : result, 0);
     }
 }
