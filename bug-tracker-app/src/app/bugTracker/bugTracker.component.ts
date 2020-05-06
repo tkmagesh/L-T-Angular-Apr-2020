@@ -16,7 +16,7 @@ export class BugTrackerComponent{
     newBugName : string = '';
 
     constructor(private bugOperations : BugOperationsService){
-        
+        this.bugs = this.bugOperations.getAll();
     }
 
     onAddNewClick(){
@@ -28,20 +28,16 @@ export class BugTrackerComponent{
     onBugNameClick(bugToToggle : Bug){
         const toggledBug = this.bugOperations.toggle(bugToToggle);
         this.bugs = this.bugs.map(bug => bug === bugToToggle ? toggledBug : bug);
-        
     }
 
     onRemoveClick(bugToRemove : Bug){
+        this.bugOperations.remove(bugToRemove);
         this.bugs = this.bugs.filter(bug => bug !== bugToRemove);
     }
 
     onRemoveClosedClick() : void {
-        this.bugs = this.bugs.filter(bug => !bug.isClosed);
-    }
-
-    //convert the following into a pipe 'closedCountPipe'
-    getClosedCount() : number {
-        console.log('getClosedCount triggered');
-        return this.bugs.reduce((result, bug) => bug.isClosed ? ++result : result, 0);
+        this.bugs
+            .filter(bug => bug.isClosed)
+            .forEach(closedBug => this.onRemoveClick(closedBug));
     }
 }
