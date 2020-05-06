@@ -13,16 +13,14 @@ export class BugTrackerComponent{
     bugSortAttr : string = '';
     bugSortDesc : boolean = false;
 
-    newBugName : string = '';
+    
 
     constructor(private bugOperations : BugOperationsService){
         this.bugs = this.bugOperations.getAll();
     }
 
-    onAddNewClick(){
-        const newBug: Bug = this.bugOperations.createNew(this.newBugName);
-        //this.bugs.push(newBug);
-        this.bugs = [...this.bugs, newBug];
+    onNewBugCreatedHandler(bug : Bug){
+        this.bugs = [ ...this.bugs, bug ];
     }
 
     onBugNameClick(bugToToggle : Bug){
