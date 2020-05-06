@@ -12,6 +12,13 @@ import { ClosedCountPipe } from './bugTracker/pipes/closedCount.pipe';
 import { BugOperationsService } from './bugTracker/services/bugOperations.service';
 import { BugStorageService } from './bugTracker/services/bugStorage.service';
 
+
+function localStorageFactory(){
+  //some logic for creating the object goes here
+  return window.localStorage;
+}
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -24,9 +31,15 @@ import { BugStorageService } from './bugTracker/services/bugStorage.service';
   imports: [
     BrowserModule
   ],
-  providers: [
+  /* providers: [
     BugOperationsService
     , BugStorageService
+  ], */
+  providers : [
+    { provide : BugOperationsService, useClass : BugOperationsService },
+    { provide : BugStorageService, useClass : BugStorageService },
+    //{ provide : Storage, useValue : window.localStorage}
+    { provide :Storage, useFactory : localStorageFactory }
   ],
   bootstrap: [AppComponent]
 })

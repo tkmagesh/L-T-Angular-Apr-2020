@@ -8,6 +8,9 @@ export class BugOperationsService {
     constructor(private bugStorage : BugStorageService){
 
     }
+
+    //private bugStorage : BugStorageService = new BugStorageService();
+
     getAll() : Bug[]{
         return this.bugStorage.getAll();
     }

@@ -1,8 +1,16 @@
+import { Injectable } from "@angular/core";
 import { Bug } from '../models/Bug';
 
+@Injectable()
 export class BugStorageService{
     private _currentBugId : number = 0;
-    private storage : Storage = window.localStorage;
+    
+    //private storage : Storage = window.localStorage;
+
+    constructor(private storage : Storage){
+
+    }
+
     save(bug : Bug) : Bug {
         if (bug.id === 0){
             bug.id = ++this._currentBugId;
