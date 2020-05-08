@@ -4,11 +4,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-//npm install moment
-import * as moment from 'moment';
-
-console.log(moment('2020-05-08T04:11:14.888Z').fromNow());
-
 if (environment.production) {
   enableProdMode();
 }
