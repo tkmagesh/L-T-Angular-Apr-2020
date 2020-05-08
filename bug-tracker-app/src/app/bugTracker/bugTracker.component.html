@@ -18,7 +18,7 @@
                  (click)="onBugNameClick(bug)">
                 {{ bug.name | trimText:40 }}
             </span>
-            <div class="datetime">[Created At]</div>
+            <div class="datetime">{{bug.createdAt}}</div>
             <input type="button" value="Remove" (click)="onRemoveClick(bug)">
         </li>
         
