@@ -10,6 +10,13 @@
     <input type="checkbox" (change)="bugSortDesc = $event.target.checked">
 </section>
 <app-bug-edit (onBugCreated)="onNewBugCreatedHandler($event)"></app-bug-edit>
+
+<label for="">Projects</label>
+<select>
+    <option></option>
+</select>
+
+
 <section class="list">
     <ol>
         <li *ngFor="let bug of ( bugs | sort:bugSortAttr:bugSortDesc ) ">
