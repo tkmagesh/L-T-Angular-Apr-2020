@@ -211,3 +211,26 @@ var add = memoize(function(x,y){
     console.log(`processing ${x} and ${y}`);
     return x + y;
 });
+
+
+Iterables
+Generators (Iterables with lazy evaluation)
+
+Observable X Generator
+
+Generator => Data that already exists
+Observable => Data that will become available in future
+
+Event Driven Applications
+    Events => Data that will be available in future one after another across a timeline
+
+next() => value
+onNext(fn)
+
+Reactive Extensions
+Rx.NET
+Rxjs
+
+HttpClientModule
+
+HttpClient

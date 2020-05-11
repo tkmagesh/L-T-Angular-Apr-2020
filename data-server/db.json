@@ -1,36 +1,35 @@
 {
-    "bugs" : [
-        {
-            "id": 1,
-            "name": "Server communication failure",
-            "isClosed": false,
-            "createdAt": "2020-05-08T04:11:14.888Z",
-            "project_id" : 1
-        },
-        {
-            "id": 2,
-            "name": "User actions not recognized",
-            "isClosed": false,
-            "createdAt": "2020-05-08T04:11:33.616Z",
-            "project_id": 1
-        },
-        {
-            "id": 4,
-            "name": "Data integrity checks failed",
-            "isClosed": false,
-            "createdAt": "2020-05-08T06:05:40.536Z",
-            "project_id": 2
-        },
-        {
-            "id": 3,
-            "name": "Application not responding",
-            "isClosed": false,
-            "createdAt": "2020-05-08T04:12:58.385Z",
-            "project_id": 2
-        }
-    ],
-    "projects" : [
-        { "id" : 1, "name" : "Payroll Master"}, 
-        { "id" : 2, "name" : "Sales Management" }
-    ]
+  "bugs": [
+    {
+      "id": 2,
+      "name": "User actions not recognized",
+      "isClosed": false,
+      "createdAt": "2020-05-08T04:11:33.616Z",
+      "project_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Data integrity checks failed",
+      "isClosed": false,
+      "createdAt": "2020-05-08T06:05:40.536Z",
+      "project_id": 2
+    },
+    {
+      "id": 3,
+      "name": "Application not responding",
+      "isClosed": false,
+      "createdAt": "2020-05-08T04:12:58.385Z",
+      "project_id": 2
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Payroll Master"
+    },
+    {
+      "id": 2,
+      "name": "Sales Management"
+    }
+  ]
 }
